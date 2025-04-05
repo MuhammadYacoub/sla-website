@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="هيئة قضايا الدولة - الموقع الرسمي">
+    <meta property="og:title" content="هيئة قضايا الدولة">
+    <meta property="og:image" content="logo.png">
+    <title>هيئة قضايا الدولة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .logo {
+            max-height: 60px;
+        }
+        
+        .search-login {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .search-box i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+        
+        .login-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .language-selector {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px 10px;
+            background: transparent;
+            cursor: pointer;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+        
+        .nav-menu li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: block;
+            text-align: center;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu li a:hover {
+            background-color: #e0e0e0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('22.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            position: relative;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            width: 50%;
+            padding: 20px;
+            margin-right: 50%;
+        }
+        
+        .hero-image {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35%;
+            border: 5px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1;
+            background-color: #fff;
+            height: 80%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .hero-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-right: 4px solid #0066cc;
+            padding-right: 10px;
+        }
+        
+        .hero-text {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .more-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* Carousel */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            scrollbar-width: none;
+        }
+        
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .carousel-item {
+            min-width: 150px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: white;
+            flex-shrink: 0;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            padding: 10px;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+        }
+        
+        .section-title {
+            color: #0066cc;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .view-all {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        /* Job Section */
+        .job-section {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .job-logo {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .job-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .job-description {
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .apply-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* News Section */
+        .news-section {
+            margin-bottom: 30px;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .news-item {
+            display: flex;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .news-image {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 10px;
+            flex-grow: 1;
+        }
+        
+        .news-title {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .news-date {
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .featured-news {
+            grid-column: 2;
+            grid-row: 1 / span 3;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .featured-news-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .featured-news-content {
+            padding: 15px;
+        }
+        
+        .featured-news-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        /* President Section */
+        .president-section {
+            margin-bottom: 30px;
+        }
+        
+        .president-card {
+            display: flex;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .president-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        .president-name {
+            color: #0066cc;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .president-bio {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .president-speech {
+            margin-top: 30px;
+        }
+        
+        .speech-title {
+            color: #0066cc;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .president-image {
+            width: 40%;
+            object-fit: cover;
+        }
+        
+        /* Digital Library */
+        .digital-library {
+            margin-bottom: 30px;
+        }
+        
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .library-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .library-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .library-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        
+        .library-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .library-description {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0066cc;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ddd;
+        }
+        
+        .social-media {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            background-color: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: rgba(255,255,255,0.4);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+      <div class="container">
+          <div class="top-bar">
+              <a href="#"><img src="logo.png" alt="Logo" class="logo"></a>
+              <div class="search-login">
+                  <div class="search-box">
+                      <input type="text" placeholder="بحث..." aria-label="بحث">
+                      <i class="fas fa-search"></i>
+                  </div>
+                  <button class="login-btn" aria-label="تسجيل الدخول">تسجيل الدخول <i class="fas fa-user"></i></button>
+                  <select class="language-selector" aria-label="تغيير اللغة">
+                      <option value="ar">العربية</option>
+                      <option value="en">English</option>
+                  </select>
+              </div>
+          </div>
+          <nav aria-label="Main Navigation">
+              <ul class="nav-menu">
+                  <li><a href="#">هيئة قضايا الدولة</a></li>
+                  <li><a href="#">المكتبة الرقمية</a></li>
+                  <li><a href="#">وقف المحتوى</a></li>
+                  <li><a href="#">الخدمات</a></li>
+                  <li><a href="#">اتصل بنا</a></li>
+                  <li><a href="#">الأخبار والفعاليات</a></li>
+                  <li><a href="#">التدريب</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+      <div class="hero-overlay">
+          <div class="container">
+              <div class="hero-content">
+                  <h1 class="hero-title">بدء فعاليات الدورة التدريبية الثالثة للسادة الإداريين</h1>
+                  <p class="hero-text">
+                      تعلن هيئة قضايا الدولة لتطوير العمل الإداري وتنظيم دورات وتدريبات للسادة 
+                      الإداريين الجامعين، وتهدف الدورة لتطوير منظومة التحول الرقمي بالهيئة بالتعاون مع 
+                      وزارة الاتصالات وتقنية المعلومات الرقمية وذلك لتحقيق رؤية مصر 2030 للتحول الرقمي والاقتصاد.
+                  </p>
+                  <button class="more-btn" aria-label="قراءة المزيد">قراءة المزيد</button>
+              </div>
+              <div class="hero-image">
+                  <img src="22.jpg" alt="Training Session">
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Carousel Section -->
+  <!-- <section class="container">
+      <div class="carousel" aria-label="Carousel">
+          <div class="carousel-item">
+              <img src="logo.png" alt="فعاليات اليوم" loading="lazy">
+              <div class="carousel-caption">فعاليات اليوم</div>
+          </div>
+          <div class="carousel-item">
+              <img src="logo.png" alt="احتفالية ذكرى تأسيس" loading="lazy">
+              <div class="carousel-caption">احتفالية ذكرى تأسيس</div>
+          </div>
+          <div class="carousel-item">
+              <img src="logo.png" alt="الجلسات التدريبية" loading="lazy">
+              <div class="carousel-caption">الجلسات التدريبية</div>
+          </div>
+          <div class="carousel-item">
+              <img src="logo.png" alt="اجتماعات اللجنة العليا" loading="lazy">
+              <div class="carousel-caption">اجتماعات اللجنة العليا</div>
+          </div>
+          <div class="carousel-item">
+              <img src="logo.png" alt="زيارة رسمية للمقر الجديد" loading="lazy">
+              <div class="carousel-caption">زيارة رسمية للمقر الجديد</div>
+          </div>
+          <div class="carousel-item">
+              <img src="logo.png" alt="تكريم المتميزين" loading="lazy">
+              <div class="carousel-caption">تكريم المتميزين</div>
+          </div>
+      </div>
+  </section> -->
+
+  <!-- Job Section -->
+  <section class="container job-section">
+      <div class="job-header">
+          <h2 class="job-title">وظائف بهيئة قضايا الدولة لدفعة 2023 حقوق وشرطة وشريعة وقانون</h2>
+          <img src="logo.png" alt="Logo" class="job-logo">
+      </div>
+      <p class="job-description">
+          تعلن هيئة قضايا الدولة في استقبال طلبات التعيين للخريجين الجدد من دفعة 2023 و ذلك وفقا لشروط معينة، حيث تكون هناك وظائف في التقديم من وظائف هيئة قضايا الدولة ، والتخصصات المطلوبة مختلفة وأعلنت هيئة قضايا الدولة عن قبول طلبات التعيين في وظائف معيدي مساعد من خريجي كليات الحقوق والشريعة والقانون والشرطة.
+      </p>
+      <p class="job-description">
+          فترة التقديم تبدأ اعتبارا من يوم الأحد 25 يونيو 2023 وحتى نهاية يوم الأربعاء 12 يوليو 2023
+      </p>
+      <button class="apply-btn" aria-label="شروط التقديم">شروط التقديم</button>
+  </section>
+
+  <!-- News Section -->
+  <section class="container news-section">
+      <div class="section-header">
+          <h2 class="section-title">آخر الأخبار والفعاليات</h2>
+          <a href="#" class="view-all">عرض الكل</a>
+      </div>
+      <div class="news-grid">
+          <div class="news-list">
+              <div class="news-item">
+                  <img src="logo.png" alt="حفل فعاليات الدورة التدريبية الثالثة للفوج (117)" loading="lazy" class="news-image">
+                  <div class="news-content">
+                      <h3 class="news-title">حفل فعاليات الدورة التدريبية الثالثة للفوج (117)</h3>
+                      <div class="news-date">
+                          <span>12 أبريل 2023</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="news-item">
+                  <img src="logo.png" alt="حفل فعاليات المنضمين الجدد" loading="lazy" class="news-image">
+                  <div class="news-content">
+                      <h3 class="news-title">حفل فعاليات المنضمين الجدد</h3>
+                      <div class="news-date">
+                          <span>8 أبريل 2023</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="news-item">
+                  <img src="logo.png" alt="تدشين الهوية والشعار الرسمي للهيئة القضائية" loading="lazy" class="news-image">
+                  <div class="news-content">
+                      <h3 class="news-title">تدشين الهوية والشعار الرسمي للهيئة القضائية</h3>
+                      <div class="news-date">
+                          <span>2 أبريل 2023</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="news-item">
+                  <img src="logo.png" alt="لجنة اختيار الموظفين الجدد والتعاون مع المعاهد القانونية" loading="lazy" class="news-image">
+                  <div class="news-content">
+                      <h3 class="news-title">لجنة اختيار الموظفين الجدد والتعاون مع المعاهد القانونية</h3>
+                      <div class="news-date">
+                          <span>28 مارس 2023</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="featured-news">
+              <img src="logo.png" alt="اختتام فعاليات الدورة التدريبية" loading="lazy" class="featured-news-image">
+              <div class="featured-news-content">
+                  <h3 class="featured-news-title">اختتام فعاليات الدورة التدريبية</h3>
+                  <p>تم اختتام فعاليات الدورة التدريبية بحضور رئيس الهيئة وكبار المسؤولين، حيث تم تكريم المتدربين المتميزين وتسليم الشهادات للخريجين.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+      <div class="container">
+          <div class="footer-container">
+              <div class="footer-column">
+                  <h3>روابط سريعة</h3>
+                  <ul class="footer-links">
+                      <li><a href="#">الرئيسية</a></li>
+                      <li><a href="#">عن الهيئة</a></li>
+                      <li><a href="#">الخدمات</a></li>
+                      <li><a href="#">اتصل بنا</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>معلومات</h3>
+                  <ul class="footer-links">
+                      <li><a href="#">سياسة الخصوصية</a></li>
+                      <li><a href="#">الشروط والأحكام</a></li>
+                      <li><a href="#">الأسئلة الشائعة</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>تابعنا</h3>
+                  <div class="social-media">
+                      <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="footer-column">
+                  <h3>تواصل معنا</h3>
+                  <ul class="footer-links">
+                      <li><a href="#">البريد الإلكتروني</a></li>
+                      <li><a href="#">الهاتف</a></li>
+                      <li><a href="#">العنوان</a></li>
+                  </ul>
+              </div>
+          </div>
+          <p class="copyright">© <span id="year"></span> هيئة قضايا الدولة</p>
+      </div>
+  </footer>
+  <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
