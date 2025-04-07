@@ -148,34 +148,44 @@
   </section>
 
   <!-- News Section -->
-   <!-- عناصر التحكم في الأخبار -->
-   <section class="news-controls">
-    <input type="search" id="news-search" placeholder="ابحث في الأخبار...">
-    <select id="category-filter">
-        <option value="">كل التصنيفات</option>
-        <option value="بيانات رسمية">بيانات رسمية</option>
-        <option value="مناسبات">مناسبات</option>
-        <option value="نشاطات">نشاطات</option>
-        <option value="تعاون علمي">تعاون علمي</option>
-    </select>
-    <select id="month-filter">
-        <option value="">كل الأشهر</option>
-        <option value="2023-04">أبريل 2023</option>
-        <option value="2023-03">مارس 2023</option>
-    </select>
-</section>
-
-<!-- قسم الأخبار التفاعلي -->
-<section class="interactive-news">
-    <div class="news-container">
-        <!-- Main News -->
-        <div id="main-news" class="main-news-card"></div>
-
-        <!-- News Thumbnails -->
-        <div class="news-thumbnails" id="news-thumbnails"></div>
+  <section class="container news-section">
+    <div class="section-header">
+      <h2 class="section-title">آخر الأخبار والفعاليات</h2>
+      <a href="#" class="view-all">عرض الكل</a>
     </div>
-</section>
-
+  
+    <div class="news-layout">
+      <!-- الكروت -->
+      <div class="news-side-list">
+        <div class="news-card">
+          <img src="images/news1.jpg" alt="">
+          <p>رئيس الهيئة ينعي الأنبا باخوميوس</p>
+        </div>
+        <div class="news-card">
+          <img src="images/news2.jpg" alt="">
+          <p>تهنئة بعيد الفطر</p>
+        </div>
+        <div class="news-card">
+          <img src="images/news3.jpg" alt="">
+          <p>افتتاح فرع الهيئة الجديد</p>
+        </div>
+        <div class="news-card">
+          <img src="images/news4.jpg" alt="">
+          <p>تكريم المرأة بيومها العالمي</p>
+        </div>
+      </div>
+  
+      <!-- الخبر الرئيسي -->
+      <div class="main-news-feature">
+        <img src="images/news4.jpg" alt="">
+        <h3>تكريم المرأة في يومها العالمي</h3>
+        <span class="news-date">2023-03-28</span>
+        <p>شهد رئيس الهيئة احتفالية خاصة لتكريم المرأة وتأكيد دورها في المجال القانوني...</p>
+        <button class="more-btn">المزيد</button>
+      </div>
+    </div>
+  </section>
+  
 <!-- المودال لعرض التفاصيل -->
 <div class="modal" id="news-modal">
     <div class="modal-content">
