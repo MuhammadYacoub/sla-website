@@ -1,4 +1,3 @@
-
 // ---------------------------
 // Responsive Navigation Toggle
 // ---------------------------
@@ -52,8 +51,8 @@ function renderMainNews(index) {
         <img src="${news.image}" alt="">
         <h3>${news.title}</h3>
         <p class="news-date">${news.date}</p>
-        <p class="news-content">${news.content.slice(0, 100)}...</p>
-        <button onclick="openModal(${index})">المزيد</button>
+        <p class="news-content">${news.content.slice(0, 500)}...</p>
+        <button class="btn btn-primary" onclick="openModal(${index})">المزيد</button>
     `;
 }
 
@@ -65,7 +64,11 @@ function renderThumbnails() {
         div.className = 'thumbnail';
         div.innerHTML = `
             <img src="${news.image}" alt="">
-            <p>${news.title}</p>
+            <div class="thumbnail-content">
+                <h3>${news.title}</h3>
+                <p>${news.content.slice(0, 50)}...</p>
+                <p class="news-date">${news.date}</p>
+            </div>
         `;
         div.onclick = () => {
             currentIndex = i;
