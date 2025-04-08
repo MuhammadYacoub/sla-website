@@ -111,11 +111,11 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: #f7f7f7; /* Add a background color for better visibility */
-    width: 100%; /* Ensure it spans the full width */
-    border-radius: 50px; /* Add rounded corners */
+    width: 95%; /* Ensure it spans the full width */
+    border-radius:0 0 10px 10px; /* Add rounded corners */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add a subtle shadow for depth */
     position: relative;
+    background-color: transparent;   /* transparent */
 }
 
 .nav-menu li {
@@ -257,6 +257,9 @@ header {
     margin-bottom: 20px;
     border-bottom: 2px solid #0066cc;
     padding-bottom: 10px;
+    width: 80%;
+    margin: auto;
+    padding: auto;
 }
 
 .section-title {
@@ -409,7 +412,7 @@ header {
 }
 
 .president-details {
-    text-align: center; /* Center the text inside the details */
+    text-align: right; /* Center the text inside the details */
 }
 
 .president-name {
@@ -832,7 +835,7 @@ img {
 }
 
 .main-news-card img {
-    width: 600px;
+    width: 25%;
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
